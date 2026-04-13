@@ -66,7 +66,8 @@ def main():
     # 2. Split documents into smaller chunks
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=CHUNK_SIZE,
-        chunk_overlap=CHUNK_OVERLAP
+        chunk_overlap=CHUNK_OVERLAP,
+        add_start_index=True
     )
     docs = text_splitter.split_documents(documents)
     print(f"Split documents into {len(docs)} chunks.")
